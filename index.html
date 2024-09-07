@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disponibilités des Joueurs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid #333;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .available {
+            background-color: green;
+        }
+        .unavailable {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<table id="disponibilitesTable">
+    <thead>
+        <tr>
+            <th>Joueur</th>
+            <th>Lundi</th>
+            <th>Mardi</th>
+            <th>Mercredi</th>
+            <th>Jeudi</th>
+            <th>Vendredi</th>
+            <th>Samedi</th>
+            <th>Dimanche</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Darkilia</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Ghosty</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Redkill</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Rhosé</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Stormi</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const table = document.getElementById('disponibilitesTable');
+        
+        table.addEventListener('click', function(e) {
+            if (e.target.tagName === 'TD') {
+                const cell = e.target;
+                
+                if (cell.classList.contains('available')) {
+                    cell.classList.remove('available');
+                    cell.classList.add('unavailable');
+                } else if (cell.classList.contains('unavailable')) {
+                    cell.classList.remove('unavailable');
+                } else {
+                    cell.classList.add('available');
+                }
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
